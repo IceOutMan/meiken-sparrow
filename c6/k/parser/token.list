@@ -1,0 +1,97 @@
+char* tokenArray[] = {
+   "UNKNOWN",
+   "NUM",		   
+   "STRING",     	   
+   "ID",	     	   
+   "INTERPOLATION",
+   "VAR",		   
+   "FUN",		   
+   "IF",		   
+   "ELSE",	     	   
+   "TRUE",	     	   
+   "FALSE",	     	   
+   "WHILE",	     	   
+   "FOR",	     	   
+   "BREAK",	     	   
+   "CONTINUE",
+   "RETURN",     	   
+   "NULL",	     	   
+   "CLASS",	     	   
+   "THIS",	     	   
+   "STATIC",     	   
+   "IS",     	   
+   "SUPER",	     	   
+   "IMPORT",     	   
+   "COMMA",		   
+   "COLON",		   
+   "LEFT_PAREN",	   
+   "RIGHT_PAREN",	   
+   "LEFT_BRACKET",	   
+   "RIGHT_BRACKET",	   
+   "LEFT_BRACE",	   
+   "RIGHT_BRACE",	   
+   "DOT",		   
+   "DOT_DOT",	   
+   "ADD",		   
+   "SUB",		   
+   "MUL",		   
+   "DIV",		   
+   "MOD",		   
+   "ASSIGN",	   
+   "BIT_AND",	   
+   "BIT_OR",	   
+   "BIT_NOT",	   
+   "BIT_SHIFT_RIGHT",  
+   "BIT_SHIFT_LEFT",   
+   "LOGIC_AND",	   
+   "LOGIC_OR",	   
+   "LOGIC_NOT",	   
+   "EQUAL",		   
+   "NOT_EQUAL",	   
+   "GREATE",	   
+   "GREATE_EQUAL",	   
+   "LESS",		   
+   "LESS_EQUAL",	   
+   "QUESTION",	   
+   "EOF"
+};
+
+/*
+typedef enum {
+   // 数据类型
+
+    // 关键字（系统保留字）
+
+    // 以下是关于类和模块导入的 token
+
+    // 分隔符
+
+    // 简单双目运算符
+
+    // 位运算符
+    TOKEN_BIT_AND,          // &
+    TOKEN_BIT_OR,           // |
+    TOKEN_BIT_NOT,          // ~
+    TOKEN_BIT_SHIFT_RIGHT,  // >>
+    TOKEN_BIT_SHIFT_LEFT,   // <<
+
+    // 逻辑位运算
+    TOKEN_LOGIC_AND,        // &&
+    TOKEN_LOGIC_OR,         // ||
+    TOKEN_LOGIC_NOT,        // !
+
+    // 关系操作符
+    TOKEN_EQUAL,            // ==
+    TOKEN_NOT_EQUAL,        // !=
+    TOKEN_GREATE,           // >
+    TOKEN_GREATE_EQUAL,     // >=
+    TOKEN_LESS,             // <
+    TOKEN_LESS_EQUAL,       // <=
+
+    TOKEN_QUESTION,         // ? 
+
+    // 文件结束标记，仅词法分析时使用
+    TOKEN_EOF               // EOF 
+} TokenType;
+
+*/

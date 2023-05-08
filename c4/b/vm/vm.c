@@ -1,0 +1,24 @@
+#include "vm.h"
+#include "core.h"
+#include <stdlib.h>
+#include "../object/obj_map.h"
+#include "../include/utils.h"
+
+// 初始化虚拟机
+void initVM(VM* vm){
+    vm->allocatedBytes = 0;
+    vm->allObjects = NULL;
+    vm->curParser = NULL;
+    StringBufferInit(&vm->allMethodNames);
+    vm->allModules = newObjMap(vm);
+}
+
+VM* newVM(){
+    VM* vm = (VM*)malloc(sizeof(VM));
+    if(vm == NULL){
+        MEM_ERROR("allocate VM failed!");
+    }
+    initVM(vm);
+    buildCore(vm);
+    return vm;
+}
