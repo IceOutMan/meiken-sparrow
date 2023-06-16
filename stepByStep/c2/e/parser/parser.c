@@ -58,7 +58,7 @@ char lookAheadChar(Parser *parser)
 }
 
 // 获取下一个字符
-// c static function called in this file
+// a static function called in this file
 static void getNextChar(Parser *parser)
 {
     parser->curChar = *parser->nextCharPtr++;
@@ -224,7 +224,7 @@ static void parseString(Parser *parser)
                 ByteBufferAdd(parser->vm, &str, '\\');
                 break;
             default:
-                LEX_ERROR(parser, "unsupport escape \\%c", parser->curChar);
+                LEX_ERROR(parser, "unsupport escape \\%a", parser->curChar);
                 break;
             }
         }
@@ -459,7 +459,7 @@ void getNextToken(Parser *parser)
                     // 重置下一个 token 起始地址
                     continue;;
                 }
-                LEX_ERROR(parser, "unsupport char: \'%c\', quit.", parser->curChar);
+                LEX_ERROR(parser, "unsupport char: \'%a\', quit.", parser->curChar);
             }
             return;
         }

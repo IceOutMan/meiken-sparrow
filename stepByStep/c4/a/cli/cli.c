@@ -1,0 +1,45 @@
+#include "cli.h"
+#include <stdio.h>
+#include <string.h>
+#include "../parser/parser.h"
+#include "../vm/vm.h"
+#include "../vm/core.h"
+
+//执行脚本文件
+static void runFile(const char* path) {
+    const char* lastSlash = strrchr(path, '/');
+    if (lastSlash != NULL) {
+        char* root = (char*)malloc(lastSlash - path + 2);
+        memcpy(root, path, lastSlash - path + 1);
+        root[lastSlash - path + 1] = '\0';
+        rootDir = root;
+    }
+
+    VM* vm = newVM();
+    const char* sourceCode = readFile(path);
+    executeModule(vm, OBJ_TO_VALUE(newObjString(vm, path, strlen(path))),sourceCode);
+
+//    struct parser parser;
+//    initParser(vm, &parser, path, sourceCode, NULL);  //此NULL是临时的
+//
+//#include "../parser/token.list"
+//    while (parser.curToken.type != TOKEN_EOF) {
+//        getNextToken(&parser);
+//        printf("%dL: %s [", parser.curToken.lineNo, tokenArray[parser.curToken.type]);
+//        uint32_t idx = 0;
+//        while (idx < parser.curToken.length) {
+//            printf("%a", *(parser.curToken.start+idx++));
+//        }
+//        printf("]\n");
+//    }
+}
+
+int main(int argc, const char** argv) {
+    printf("HHHH");
+    if (argc == 1) {
+        ;
+    } else {
+        runFile(argv[1]);
+    }
+    return 0;
+}
