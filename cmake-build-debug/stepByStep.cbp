@@ -44,11 +44,12 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/cli"/>
-					<Add directory="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/include"/>
-					<Add directory="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/object"/>
-					<Add directory="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/parser"/>
-					<Add directory="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/vm"/>
+					<Add directory="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/cli"/>
+					<Add directory="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/compiler"/>
+					<Add directory="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/include"/>
+					<Add directory="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/object"/>
+					<Add directory="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/parser"/>
+					<Add directory="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/vm"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/a++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include"/>
@@ -70,11 +71,12 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/cli"/>
-					<Add directory="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/include"/>
-					<Add directory="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/object"/>
-					<Add directory="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/parser"/>
-					<Add directory="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/vm"/>
+					<Add directory="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/cli"/>
+					<Add directory="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/compiler"/>
+					<Add directory="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/include"/>
+					<Add directory="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/object"/>
+					<Add directory="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/parser"/>
+					<Add directory="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/vm"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/a++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/14.0.3/include"/>
@@ -90,94 +92,100 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/cli/cli.c">
+		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/cli/cli.c">
 			<Option target="cli-main"/>
 		</Unit>
-		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/cli/cli.h">
+		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/cli/cli.h">
 			<Option target="cli-main"/>
 		</Unit>
-		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/include/unicodeUtf8.c">
+		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/compiler/compiler.c">
 			<Option target="cli-main"/>
 		</Unit>
-		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/include/unicodeUtf8.h">
+		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/compiler/compiler.h">
 			<Option target="cli-main"/>
 		</Unit>
-		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/include/utils.c">
+		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/include/unicodeUtf8.c">
 			<Option target="cli-main"/>
 		</Unit>
-		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/include/utils.h">
+		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/include/unicodeUtf8.h">
 			<Option target="cli-main"/>
 		</Unit>
-		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/object/class.c">
+		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/include/utils.c">
 			<Option target="cli-main"/>
 		</Unit>
-		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/object/class.h">
+		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/include/utils.h">
 			<Option target="cli-main"/>
 		</Unit>
-		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/object/header_obj.c">
+		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/object/class.c">
 			<Option target="cli-main"/>
 		</Unit>
-		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/object/header_obj.h">
+		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/object/class.h">
 			<Option target="cli-main"/>
 		</Unit>
-		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/object/meta_obj.c">
+		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/object/header_obj.c">
 			<Option target="cli-main"/>
 		</Unit>
-		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/object/meta_obj.h">
+		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/object/header_obj.h">
 			<Option target="cli-main"/>
 		</Unit>
-		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/object/obj_fn.c">
+		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/object/meta_obj.c">
 			<Option target="cli-main"/>
 		</Unit>
-		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/object/obj_fn.h">
+		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/object/meta_obj.h">
 			<Option target="cli-main"/>
 		</Unit>
-		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/object/obj_list.c">
+		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/object/obj_fn.c">
 			<Option target="cli-main"/>
 		</Unit>
-		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/object/obj_list.h">
+		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/object/obj_fn.h">
 			<Option target="cli-main"/>
 		</Unit>
-		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/object/obj_map.c">
+		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/object/obj_list.c">
 			<Option target="cli-main"/>
 		</Unit>
-		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/object/obj_map.h">
+		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/object/obj_list.h">
 			<Option target="cli-main"/>
 		</Unit>
-		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/object/obj_range.c">
+		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/object/obj_map.c">
 			<Option target="cli-main"/>
 		</Unit>
-		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/object/obj_range.h">
+		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/object/obj_map.h">
 			<Option target="cli-main"/>
 		</Unit>
-		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/object/obj_string.c">
+		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/object/obj_range.c">
 			<Option target="cli-main"/>
 		</Unit>
-		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/object/obj_string.h">
+		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/object/obj_range.h">
 			<Option target="cli-main"/>
 		</Unit>
-		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/object/obj_thread.c">
+		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/object/obj_string.c">
 			<Option target="cli-main"/>
 		</Unit>
-		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/object/obj_thread.h">
+		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/object/obj_string.h">
 			<Option target="cli-main"/>
 		</Unit>
-		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/parser/parser.c">
+		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/object/obj_thread.c">
 			<Option target="cli-main"/>
 		</Unit>
-		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/parser/parser.h">
+		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/object/obj_thread.h">
 			<Option target="cli-main"/>
 		</Unit>
-		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/vm/core.c">
+		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/parser/parser.c">
 			<Option target="cli-main"/>
 		</Unit>
-		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/vm/core.h">
+		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/parser/parser.h">
 			<Option target="cli-main"/>
 		</Unit>
-		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/vm/vm.c">
+		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/vm/core.c">
 			<Option target="cli-main"/>
 		</Unit>
-		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/a/vm/vm.h">
+		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/vm/core.h">
+			<Option target="cli-main"/>
+		</Unit>
+		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/vm/vm.c">
+			<Option target="cli-main"/>
+		</Unit>
+		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/vm/vm.h">
 			<Option target="cli-main"/>
 		</Unit>
 		<Unit filename="/Users/xmly/my_devlop/technology_base/meiken-sparrow/CMakeLists.txt">
