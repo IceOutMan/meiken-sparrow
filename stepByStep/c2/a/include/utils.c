@@ -2,7 +2,7 @@
 #include "common.h"
 #include "vm.h"
 #include "parser.h"
-#include <cstdio>
+#include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
 #include <sys/signal.h>

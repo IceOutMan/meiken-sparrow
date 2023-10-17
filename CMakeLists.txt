@@ -3,19 +3,13 @@ project(stepByStep C)
 
 set(CMAKE_C_STANDARD 99)
 
-include_directories(stepByStep/c4/b/cli)
-include_directories(stepByStep/c4/b/compiler)
-include_directories(stepByStep/c4/b/include)
-include_directories(stepByStep/c4/b/object)
-include_directories(stepByStep/c4/b/parser)
-include_directories(stepByStep/c4/b/vm)
+# 列出所有源文件
+file(GLOB_RECURSE c_files "stepByStep/c2/f/*.c")
+add_executable(cli_main_c2_f ${c_files})
+# 查看内容
+#message("Found the following C files:")
+#foreach(c_file ${c_files})
+#   message("  ${c_file}")
+#endforeach()
 
-add_executable(cli-main
-        stepByStep/c4/b/cli/cli.c
-        stepByStep/c4/b/compiler/compiler.c
-        stepByStep/c4/b/include/unicodeUtf8.c stepByStep/c4/b/include/utils.c
-        stepByStep/c4/b/object/class.c stepByStep/c4/b/object/header_obj.c stepByStep/c4/b/object/meta_obj.c stepByStep/c4/b/object/obj_fn.c stepByStep/c4/b/object/obj_list.c stepByStep/c4/b/object/obj_map.c stepByStep/c4/b/object/obj_range.c stepByStep/c4/b/object/obj_string.c stepByStep/c4/b/object/obj_thread.c
-        stepByStep/c4/b/parser/parser.c
-        stepByStep/c4/b/vm/core.c stepByStep/c4/b/vm/vm.c
-        )
 

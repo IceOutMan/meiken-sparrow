@@ -36,8 +36,10 @@ static void runFile(const char* path) {
 }
 
 int main(int argc, const char** argv) {
-   printf("hello world\n");
+   char* mkPath = "/Users/gulinfei/my_devlop/gitProject/meiken-sparrow/stepByStep/c2/f/sample.sp";
+
    if (argc == 1) {
+       runFile(mkPath);
    } else {
       runFile(argv[1]);
    }
