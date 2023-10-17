@@ -29,20 +29,20 @@ set(CMAKE_C_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
-  "../stepByStep/c4/b/cli"
-  "../stepByStep/c4/b/compiler"
-  "../stepByStep/c4/b/include"
-  "../stepByStep/c4/b/object"
-  "../stepByStep/c4/b/parser"
-  "../stepByStep/c4/b/vm"
+  "/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/cli"
+  "/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/compiler"
+  "/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/include"
+  "/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/object"
+  "/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/parser"
+  "/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c4/b/vm"
   )
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   )
 
-# Targets to which this target links.
-set(CMAKE_TARGET_LINKED_INFO_FILES
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.
