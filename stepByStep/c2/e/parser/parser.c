@@ -1,4 +1,4 @@
-#include "parser.h"
+#include "./parser.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include "../include/common.h"
@@ -9,32 +9,33 @@
 
 struct keywordToken
 {
-    char *keyword;
-    uint8_t length;
-    TokenType token;
+    char*       keyword;
+    uint8_t     length;
+    TokenType   token;
 }; // 关键字（保留字）结构
 
 // 关键字查找表
 struct keywordToken keywordsToken[] = {
-    {"var", 3, TOKEN_VAR},
-    {"fun", 3, TOKEN_FUN},
-    {"if", 3, TOKEN_IF},
-    {"else", 4, TOKEN_ELSE},
-    {"true", 4, TOKEN_TRUE},
-    {"false", 5, TOKEN_FALSE},
-    {"while", 5, TOKEN_WHILE},
-    {"for", 3, TOKEN_FOR},
-    {"break", 4, TOKEN_BREAK},
-    {"continue", 8, TOKEN_CONTINUE},
+    {"var",     3,  TOKEN_VAR},
+    {"fun",     3,  TOKEN_FUN},
+    {"if",      2,  TOKEN_IF},
+    {"else",    4,  TOKEN_ELSE},
+    {"true",    4,  TOKEN_TRUE},
+    {"false",   5,  TOKEN_FALSE},
+    {"while",   5, TOKEN_WHILE},
+    {"for",     3, TOKEN_FOR},
+    {"break",   5, TOKEN_BREAK},
+    {"continue",8, TOKEN_CONTINUE},
     {"return", 6, TOKEN_RETURN},
-    {"null", 4, TOKEN_NULL},
-    {"class", 5, TOKEN_CLASS},
-    {"is", 2, TOKEN_IS},
+    {"null",   4, TOKEN_NULL},
+    {"class",  5, TOKEN_CLASS},
+    {"is",     2, TOKEN_IS},
     {"static", 6, TOKEN_STATIC},
-    {"this", 4, TOKEN_THIS},
-    {"super", 4, TOKEN_SUPER},
+    {"this",   4, TOKEN_THIS},
+    {"super",  5, TOKEN_SUPER},
     {"import", 6, TOKEN_IMPORT},
-    {NULL, 0, TOKEN_UNKNOWN}};
+    {NULL,     0, TOKEN_UNKNOWN}
+};
 
 // 判断 start 是否为关键字并返回相应的token
 static TokenType idOrkeyword(const char *start, uint32_t length)
@@ -51,20 +52,20 @@ static TokenType idOrkeyword(const char *start, uint32_t length)
     return TOKEN_ID;
 }
 
-// 向前看一个字符
+// 向前看一个字符｜只看，不移动下标
 char lookAheadChar(Parser *parser)
 {
     return *parser->nextCharPtr;
 }
 
-// 获取下一个字符
+// 获取下一个字符｜移动下标｜nextCharPtr++
 // a static function called in this file
 static void getNextChar(Parser *parser)
 {
     parser->curChar = *parser->nextCharPtr++;
 }
 
-// 查看下一个字符是否为期望的，如果是就读进来，返回 true， 否则返回 false
+// 查看下一个字符是否为期望的｜如果是就获取读进来，返回 true｜否则返回 false
 static bool matchNextChar(Parser *parser, char expectedChar)
 {
     if (lookAheadChar(parser) == expectedChar)
@@ -88,7 +89,7 @@ static void skipBlanks(Parser *parser)
     }
 }
 
-// 解析表识符
+// 解析标识符
 static void parseId(Parser *parser, TokenType type)
 {
     // 数字 或 _
@@ -96,7 +97,7 @@ static void parseId(Parser *parser, TokenType type)
     {
         getNextChar(parser);
     }
-    // nextCharPTr 会指向第1个不合法字符的下一个字符，因此 -1
+    // nextCharPtr 会指向第1个不合法字符的下一个字符，因此 -1
     uint32_t length = (uint32_t)(parser->nextCharPtr - parser->curToken.start - 1);
     if (type != TOKEN_UNKNOWN)
     {
@@ -480,7 +481,7 @@ bool matchToken(Parser* parser, TokenType expected){
 }
 
 // 断言当前 token 为 expected 并读入下一个  token, 否则报错  errMsg
-void consumerCurToken(Parser* parser, TokenType expected, const char* errMsg){
+void consumeCurToken(Parser* parser, TokenType expected, const char* errMsg){
     if(parser->curToken.type != expected){
         COMPILE_ERROR(parser, errMsg);
     }

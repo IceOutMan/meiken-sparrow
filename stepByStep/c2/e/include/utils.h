@@ -2,10 +2,10 @@
 #define _INCLUDE_UTILS_H
 
 #include "common.h"
-#include <malloc/_malloc.h>
-#include <stdint.h>
+//#include <malloc/_malloc.h>
+//#include <stdint.h>
 
-void* memManager(VM* vm, void* ptr, uint32_t oldSize, uint32_t newSize);
+void *memManager(VM *vm, void *ptr, uint32_t oldSize, uint32_t newSize);
 
 #define ALLOCATE(vmPtr, type) \
     (type*) memManager(vmPtr, NULL, 0, sizeof(type))
@@ -16,14 +16,14 @@ void* memManager(VM* vm, void* ptr, uint32_t oldSize, uint32_t newSize);
 #define ALLOCATE_ARRAY(vmPtr, type, count) \
     memManager(vmPtr, NULL, 0, sizeof(type) * count)
 
-#define DELLOCATE_ARRAY(vmPtr, arrayPtr, count) \
+#define DEALLOCATE_ARRAY(vmPtr, arrayPtr, count) \
     memManager(vmPtr, arrayPtr, sizeof(arrayPtr[0]) * count, 0)
 
 
 uint32_t ceilToPowerOf2(uint32_t v);
 
 typedef struct {
-    char* str;
+    char *str;
     uint32_t length;
 } String;
 
@@ -36,11 +36,14 @@ typedef struct {
 } CharValue;
 
 
-// 声明 buffer 类型
+// 声明 buffer 类型 ，结构 + 方法
 #define DECLARE_BUFFER_TYPE(type) \
-    typedef struct{ \
+    typedef struct{               \
+        /* 数据缓冲区 */                      \
         type* datas; \
+        /* 缓冲区中已经使用的元素个数 */                      \
         uint32_t count; \
+        /* 缓冲区容量  */                      \
         uint32_t capacity; \
     }type##Buffer; \
     void type##BufferInit(type##Buffer* buf); \
@@ -48,10 +51,10 @@ typedef struct {
     void type##BufferAdd(VM* vm, type##Buffer* buf, type data); \
     void type##BufferClear(VM* vm, type##Buffer* buf);
 
-// 定义 buffer 方法
+// 实现 buffer 方法
 #define DEFINE_BUFFER_METHOD(type) \
     void type##BufferInit(type##Buffer* buf){ \
-        buf->datas = NULL;\
+        buf->datas = NULL;  \
         buf->count = buf->capacity = 0; \
     } \
 \
@@ -81,9 +84,9 @@ typedef struct {
         type##BufferInit(buf); \
     }
 
-// StringBuffer
+// StringBuffer - String 的数组
 DECLARE_BUFFER_TYPE(String)
-// 符号表, 就String数组
+// 符号表, 就String数组 - SymbolTable 就是 StringBuffer
 #define SymbolTable StringBuffer
 typedef uint8_t Byte;
 typedef char Char;
@@ -96,7 +99,7 @@ DECLARE_BUFFER_TYPE(Char);
 // ByteBuffer
 DECLARE_BUFFER_TYPE(Byte);
 
-typedef enum{
+typedef enum {
     ERROR_IO,
     ERROR_MEM,
     ERROR_LEX,
@@ -104,9 +107,9 @@ typedef enum{
     ERROR_RUNTIME
 } ErrorType;
 
-void errorReport(void* parser, ErrorType errorType, const char* fmt, ...);
+void errorReport(void *parser, ErrorType errorType, const char *fmt, ...);
 
-void symbolTableClear(VM*, SymbolTable* buffer);
+void symbolTableClear(VM *, SymbolTable *buffer);
 
 #define IO_ERROR(...) \
     errorReport(NULL, ERROR_IO, __VA_ARGS__)
@@ -124,8 +127,6 @@ void symbolTableClear(VM*, SymbolTable* buffer);
     errorReport(NULL, ERROR_RUNTIME, __VA_ARGS__)
 
 #define DEFAULT_BUFFER_SIZE 512
-
-
 
 
 #endif

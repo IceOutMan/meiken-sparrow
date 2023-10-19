@@ -8,7 +8,7 @@
  * (0000 0080 - 0000 07FF]                110_____ 10______
  * (0000 0800 - 0000 FFFF]                1110____ 10______ 10______
  * (0001 0000 - 0010 FFFF]                11110___ 10______ 10______ 10______
- * */
+ */
 
 // 返回value 按照 UTF-8 编码后的字节数量
 uint32_t getByteNumOfEncodeUtf8(int value){
@@ -91,7 +91,7 @@ uint8_t encodeUtf8(uint8_t* buf, int value){
 }
 
 
-// 返回解码 UTF-8 的字节数
+// 返回解码 UTF-8 的字节数 byte 一般是第一个字节
 uint32_t getByteNumOfDecodeUtf8(uint8_t byte){
     // byte 应该是 UTF-8 的最高字节，如果指向了 UTF-8 编码后面的低字节部分则返回0
     if((byte & 0xc0) == 0x80){
