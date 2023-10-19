@@ -35,7 +35,8 @@ static void runFile(const char *path) {
 }
 
 int main(int argc, const char **argv) {
-    char *mkPath = "/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c2/f/sample.sp";
+//    char *mkPath = "/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c2/f/sample.sp";
+    char *mkPath = "/Users/gulinfei/my_devlop/gitProject/meiken-sparrow/stepByStep/c2/f/sample.sp";
 
     if (argc == 1) {
         runFile(mkPath);
