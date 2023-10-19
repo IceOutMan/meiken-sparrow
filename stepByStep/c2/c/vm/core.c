@@ -1,8 +1,8 @@
-#include "core.h"
+#include "./core.h"
 #include <string.h>
 #include <sys/stat.h>
 #include "../include/utils.h"
-#include "vm.h"
+#include "./vm.h"
 
 // 根目录
 char* rootDir = NULL;

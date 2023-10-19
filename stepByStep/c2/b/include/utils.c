@@ -1,13 +1,12 @@
 #include "utils.h"
 #include "common.h"
-#include "vm.h"
-#include "parser.h"
-#include <cstdio>
+#include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
 #include <sys/signal.h>
 
-// 内存管理有3中功能
+
+// 内存管理有3种功能
 //  1. 申请内存
 //  2. 修改空间大小
 //  3. 释放内存
@@ -38,10 +37,10 @@ uint32_t ceilToPowerOf2(uint32_t v){
     // 假设在32位的数字中，展开成二进制,其中 X 是第一个1
     // 我们的目的是要将所有X后面的值都赋值成 1
     // 如下展示了为何 v |= v >> n 是 1,2,4,8,16
-    // _ _ _ _ _ _ _ X _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-    // _ _ _ _ _ _ _ X X _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-    // _ _ _ _ _ _ _ X X X X _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-    // _ _ _ _ _ _ _ X X X X X X X X _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+    // _ _ _ _ _ _ _ X _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+    // _ _ _ _ _ _ _ X X _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+    // _ _ _ _ _ _ _ X X X X _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+    // _ _ _ _ _ _ _ X X X X X X X X _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
     return v;
 }
 
@@ -61,7 +60,7 @@ void symbolTableClear(VM* vm, SymbolTable* buffer){
 // 通用报错函数
 void errorReport(void* parser, ErrorType errorType, const char* fmt, ...){
     char buffer[DEFAULT_BUFFER_SIZE] = {'\0'};
-    va_list = ap;
+    va_list ap;
     va_start(ap, fmt);
 
     vsnprintf(buffer, DEFAULT_BUFFER_SIZE, fmt, ap);
@@ -75,8 +74,8 @@ void errorReport(void* parser, ErrorType errorType, const char* fmt, ...){
         case ERROR_LEX:
         case ERROR_COMPILE:
             ASSERT(parser != NULL, "parser is null!");
-            fprintf(stderr, "%s:%d \"%s\"\n", ((Parser*)parser)->file, 
-                        ((Parser*)parser)->preToken.lineNo, buffer);
+            fprintf(stderr, "%s:%d \"%s\"\n", ((Parser*)parser)->file,
+                    ((Parser*)parser)->preToken.lineNo, buffer);
             break;
         case ERROR_RUNTIME:
             break;
@@ -85,28 +84,4 @@ void errorReport(void* parser, ErrorType errorType, const char* fmt, ...){
     }
 
     exit(1);
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

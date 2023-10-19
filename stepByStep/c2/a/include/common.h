@@ -17,7 +17,7 @@ typedef struct class Class;
 // 在有些函数调用并不需要提供那么多实参数时，告诉 gcc 不要报警
 #define UNUSED __attribute__ ((unused))
 
-#ifdef DEBU
+#ifdef DEBUG
     #define ASSERT(condition, errMsg) \
         do { \
             if(!(condition)){ \

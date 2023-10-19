@@ -1,6 +1,12 @@
-#include <vm.h>
 #include <stdlib.h>
-#include <../include/utils.h>
+#include "./vm.h"
+#include "../include/utils.h"
+
+// 初始化虚拟机
+void initVM(VM* vm){
+    vm->allocatedBytes = 0;
+    vm->curParser = NULL;
+}
 
 // 初始化虚拟机
 VM* newVM(){

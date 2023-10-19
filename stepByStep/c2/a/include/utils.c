@@ -1,14 +1,12 @@
 #include "utils.h"
 #include "common.h"
-#include "vm.h"
-#include "parser.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
 #include <sys/signal.h>
 
 
-// 内存管理有3中功能
+// 内存管理有3种功能
 //  1. 申请内存
 //  2. 修改空间大小
 //  3. 释放内存
@@ -62,7 +60,7 @@ void symbolTableClear(VM* vm, SymbolTable* buffer){
 // 通用报错函数
 void errorReport(void* parser, ErrorType errorType, const char* fmt, ...){
     char buffer[DEFAULT_BUFFER_SIZE] = {'\0'};
-    va_list = ap;
+    va_list ap;
     va_start(ap, fmt);
 
     vsnprintf(buffer, DEFAULT_BUFFER_SIZE, fmt, ap);
@@ -86,7 +84,6 @@ void errorReport(void* parser, ErrorType errorType, const char* fmt, ...){
     }
 
     exit(1);
-
 }
 
 
