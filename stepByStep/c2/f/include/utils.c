@@ -1,4 +1,6 @@
-#include "./utils.h"
+#include "utils.h"
+#include "../vm/vm.h"
+#include "../parser/parser.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>

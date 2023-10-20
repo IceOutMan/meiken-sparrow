@@ -67,7 +67,6 @@ typedef enum{
     TOKEN_LOGIC_OR,         // ||
     TOKEN_LOGIC_NOT,        // !
 
-
     // 关系操作符
     TOKEN_EQUAL,            // ==
     TOKEN_NOT_EQUAL,        // !=
@@ -79,7 +78,7 @@ typedef enum{
     TOKEN_QUESTION,         // ?
     
     // 文件结束标记，仅词法分析时使用 
-    TOKEN_EOF,              // EOF
+    TOKEN_EOF              // EOF
 } TokenType ;
 
 typedef struct{

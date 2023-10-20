@@ -1,6 +1,5 @@
 #ifndef _VM_VM_H
 #define _VM_VM_H
-
 #include "../include/common.h"
 #include "../object/header_obj.h"
 
@@ -16,4 +15,6 @@ VM* newVM(void);
 void initVM(VM* vm);
 
 #endif
+
+
 
