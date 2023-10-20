@@ -4,12 +4,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
-#include "../object/class.h"
-#include "../vm/vm.h"
 
 typedef struct vm VM;
 typedef struct parser Parser;
-
 typedef struct class Class;
 
 #define bool char
@@ -19,8 +16,8 @@ typedef struct class Class;
 // 在有些函数调用并不需要提供那么多实参数时，告诉 gcc 不要报警
 #define UNUSED __attribute__ ((unused))
 
-#ifdef DEBU
-    #define ASSERT(condition, errMsg) \
+#ifdef DEBUG
+#define ASSERT(condition, errMsg) \
         do { \
             if(!(condition)){ \
                 fprintf(stderr, "ASSERT failed! %s:%d In function %s(): %s\n", \
@@ -29,7 +26,7 @@ typedef struct class Class;
             } \
         } while(0);
 #else
-    #define ASSERT(condition, errMsg) ((void) 0)
+#define ASSERT(condition, errMsg) ((void) 0)
 #endif
 
 #define NOT_REACHED() \
@@ -40,4 +37,3 @@ typedef struct class Class;
     } while(0);
 
 #endif
-

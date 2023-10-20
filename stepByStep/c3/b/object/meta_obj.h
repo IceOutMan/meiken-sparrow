@@ -2,9 +2,7 @@
 #define _OBJECT_METAOBJ_H
 
 #include "obj_string.h"
-#include "../include/utils.h"
 #include "header_obj.h"
-#include "../include/common.h"
 
 typedef struct{
     ObjHeader objHeader;

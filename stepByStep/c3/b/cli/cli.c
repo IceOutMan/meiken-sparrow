@@ -5,37 +5,41 @@
 #include "../vm/vm.h"
 #include "../vm/core.h"
 
-//执行脚本文件
-static void runFile(const char* path) {
-    const char* lastSlash = strrchr(path, '/');
+// 执行脚本文件
+static void runFile(const char *path) {
+    const char *lastSlash = strrchr(path, '/');
     if (lastSlash != NULL) {
-        char* root = (char*)malloc(lastSlash - path + 2);
+        char *root = (char *) malloc(lastSlash - path + 2);
         memcpy(root, path, lastSlash - path + 1);
         root[lastSlash - path + 1] = '\0';
         rootDir = root;
     }
 
-    VM* vm = newVM();
-    const char* sourceCode = readFile(path);
+    VM *vm = newVM();
+    const char *sourceCode = readFile(path);
 
     struct parser parser;
-    initParser(vm, &parser, path, sourceCode, NULL);  //此NULL是临时的
+    initParser(vm, &parser, path, sourceCode);
 
-#include "../parser/token.list"
+    #include "../parser/token.list"
     while (parser.curToken.type != TOKEN_EOF) {
         getNextToken(&parser);
-        printf("%dL: %s [", parser.curToken.lineNo, tokenArray[parser.curToken.type]);
+        printf("%dL-tokenArray[%d]: %s [", parser.curToken.lineNo, \
+        parser.curToken.type, tokenArray[parser.curToken.type]);
         uint32_t idx = 0;
         while (idx < parser.curToken.length) {
-            printf("%a", *(parser.curToken.start+idx++));
+            printf("%c", *(parser.curToken.start + idx++));
         }
         printf("]\n");
     }
 }
 
-int main(int argc, const char** argv) {
+int main(int argc, const char **argv) {
+//    char *mkPath = "/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c2/f/sample.sp";
+    char *mkPath = "/Users/gulinfei/my_devlop/gitProject/meiken-sparrow/stepByStep/c2/f/sample.sp";
+
     if (argc == 1) {
-        ;
+        runFile(mkPath);
     } else {
         runFile(argv[1]);
     }
