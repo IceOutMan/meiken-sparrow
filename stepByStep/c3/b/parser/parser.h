@@ -1,6 +1,7 @@
 #ifndef _PARSER_PARSER_H
 #define _PARSER_PARSER_H
 #include  "../include/common.h"
+#include "../object/meta_obj.h"
 #include "../vm/vm.h"
 
 typedef enum{
@@ -86,6 +87,7 @@ typedef struct{
     const char* start;
     uint32_t length;
     uint32_t lineNo;
+    Value value;
 } Token;
 
 struct parser{
@@ -95,6 +97,7 @@ struct parser{
     char curChar;
     Token curToken;
     Token preToken;
+    ObjModule* curModule; // 当前正在编译的模块
 
     // 处于内嵌表达式之中，期望的右括号数量
     // 用于跟踪小括号对儿的嵌套
@@ -110,6 +113,6 @@ void consumeCurToken(Parser* parser, TokenType expected, const char* errMsg);
 void consumeNextToken(Parser* parser, TokenType expected, const char* errMsg);
 uint32_t getByteNumOfEncodeUtf8(int value);
 uint8_t encodeUtf8(uint8_t* buf, int value);
-void initParser(VM* vm, Parser* parser, const char* file, const char* sourceCode);
+void initParser(VM* vm, Parser* parser, const char* file, const char* sourceCode, ObjModule* objModule);
 
 #endif

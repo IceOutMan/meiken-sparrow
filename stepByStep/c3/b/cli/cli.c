@@ -19,7 +19,7 @@ static void runFile(const char *path) {
     const char *sourceCode = readFile(path);
 
     struct parser parser;
-    initParser(vm, &parser, path, sourceCode);
+    initParser(vm, &parser, path, sourceCode, NULL);
 
     #include "../parser/token.list"
     while (parser.curToken.type != TOKEN_EOF) {
@@ -35,8 +35,8 @@ static void runFile(const char *path) {
 }
 
 int main(int argc, const char **argv) {
-//    char *mkPath = "/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c2/f/sample.sp";
-    char *mkPath = "/Users/gulinfei/my_devlop/gitProject/meiken-sparrow/stepByStep/c2/f/sample.sp";
+    char *mkPath = "/Users/xmly/my_devlop/technology_base/meiken-sparrow/stepByStep/c3/b/sample.sp";
+//    char *mkPath = "/Users/gulinfei/my_devlop/gitProject/meiken-sparrow/stepByStep/c3/b/sample.sp";
 
     if (argc == 1) {
         runFile(mkPath);
