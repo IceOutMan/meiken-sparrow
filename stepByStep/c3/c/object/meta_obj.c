@@ -1,13 +1,9 @@
-#include "obj_fn.h"
-#include "class.h"
 #include "meta_obj.h"
-#include "../vm/vm.h"
-#include "header_obj.h"
-#include "obj_string.h"
+#include "class.h"
 #include <string.h>
 
 // 新建模块
-ObjModule* newObjModule(VM *vm, const char *modName)
+ObjModule *newObjModule(VM *vm, const char *modName)
 {
     ObjModule *objModule = ALLOCATE(vm, ObjModule);
     if (objModule == NULL)
@@ -30,13 +26,11 @@ ObjModule* newObjModule(VM *vm, const char *modName)
     return objModule;
 }
 
-
-
 // 创建类class的实例
-ObjInstance* newObjInstance(VM* vm, Class* class)
+ObjInstance *newObjInstance(VM *vm, Class *class)
 {
-    // 参数class主要作用是提供类中field的数目
-    ObjInstance* objInstance = ALLOCATE_EXTRA(vm,ObjInstance, sizeof(Value) * class->fieldNum);
+    // 参数 class 主要作用是提供类中 field的数目
+    ObjInstance *objInstance = ALLOCATE_EXTRA(vm,ObjInstance, sizeof(Value) * class->fieldNum);
 
     // 在此关联对象的类为参数class
     initObjHeader(vm, &objInstance->objHeader, OT_INSTANCE, class);

@@ -1,8 +1,6 @@
 #include "obj_string.h"
-#include <string.h>
 #include "../vm/vm.h"
-#include "../include/utils.h"
-#include "../include/common.h"
+#include <string.h>
 #include <stdlib.h>
 
 // fnv-1a算法
@@ -31,7 +29,7 @@ ObjString *newObjString(VM *vm, const char *str, uint32_t length)
     // length为0时str必为NULL length不为0时str不为NULL
     ASSERT(length == 0 || str != NULL, "str length don`t match str!");
 
-    //+1是为了结尾的'\0'
+    // +1是为了结尾的'\0'
     ObjString *objString = ALLOCATE_EXTRA(vm, ObjString, length + 1);
 
     if (objString != NULL)

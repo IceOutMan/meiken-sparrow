@@ -1,10 +1,11 @@
 #ifndef _OBJECT_STRING_H
 #define _OBJECT_STRING_H
 #include "header_obj.h"
+#include "../include/utils.h"
 
 typedef struct {
    ObjHeader objHeader;
-   uint32_t hashCode;  //字符串的哈希值
+   uint32_t hashCode;  // 字符串的哈希值
    CharValue value;
 } ObjString;
 

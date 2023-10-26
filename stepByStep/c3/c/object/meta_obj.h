@@ -2,10 +2,7 @@
 #define _OBJECT_METAOBJ_H
 
 #include "obj_string.h"
-#include "../include/utils.h"
 #include "header_obj.h"
-#include "../include/common.h"
-#include "class.h"
 
 typedef struct{
     ObjHeader objHeader;
@@ -22,7 +19,6 @@ typedef struct{
 } ObjInstance; // 对象实例
 
 ObjModule* newObjModule(VM* vm, const char* modName);
-
 ObjInstance* newObjInstance(VM* vm, Class* class);
 
 
