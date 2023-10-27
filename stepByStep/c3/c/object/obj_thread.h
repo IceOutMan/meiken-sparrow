@@ -10,7 +10,7 @@ typedef struct objThread {
     Value* esp;   // 运行时栈的栈顶｜随着指令执行移动
     uint32_t stackCapacity; // 栈的容量
 
-    Frame* frame;   // 调用框架
+    Frame* frames;   // 调用框架
     uint32_t usedFrameNum; // 已使用的 frame 数量
     uint32_t frameCapacity; // frame 容量
 
@@ -24,5 +24,8 @@ typedef struct objThread {
 
 } ObjThread;
 
+void prepareFrame(ObjThread* objThread, ObjClosure* objClosure, Value* stackStart);
+ObjThread* newObjThread(VM* vm, ObjClosure* objClosure);
+void resetThread(ObjThread* objThread, ObjClosure* objClosure);
 
 #endif

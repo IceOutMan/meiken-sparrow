@@ -40,10 +40,10 @@ typedef struct upvalue {
 
 typedef struct {
     ObjHeader objHeader;
-    ObjFn *fn;   //闭包中所要引用的函数
+    ObjFn *fn;   // 闭包中所要引用的函数
 
     ObjUpvalue *upvalues[0]; //用于存储此函数的 "close upvalue"
-} ObjClosure;      //闭包对象
+} ObjClosure;      // 闭包对象
 
 typedef struct {
     uint8_t *ip;    // 程序计数器 指向下一个将被执行的指令
