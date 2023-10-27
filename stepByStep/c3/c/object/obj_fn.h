@@ -46,15 +46,15 @@ typedef struct {
 } ObjClosure;      //闭包对象
 
 typedef struct {
-    uint8_t *ip;    //程序计数器 指向下一个将被执行的指令
+    uint8_t *ip;    // 程序计数器 指向下一个将被执行的指令
 
-    //在本frame中执行的闭包函数
+    // 在本frame中执行的闭包函数
     ObjClosure *closure;
 
-    //frame是共享therad.stack
-    //此项用于指向本frame所在thread运行时栈的起始地址
-    Value *stackStart;
-} Frame;  //调用框架
+    // frame 是共享 therad.stack
+    // 此项用于指向本 frame 所在 thread 运行时栈的起始地址
+    Value* stackStart;
+} Frame;  // 调用框架
 
 #define INITIAL_FRAME_NUM 4
 

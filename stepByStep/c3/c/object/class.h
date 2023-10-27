@@ -34,7 +34,15 @@ typedef enum {
 #define VALUE_TO_OBJ(value) (value.objHeader)
 #define VALUE_TO_OBJSTR(value) ((ObjString*)VALUE_TO_OBJ(value))
 #define VALUE_TO_OBJFN(value) ((ObjFn*)VALUE_TO_OBJ(value))
+
+#define VALUE_TO_OBJRANGE(value) ((ObjRange*)VALUE_TO_OBJ(value))
+#define VALUE_TO_OBJINSTANCE(value) ((ObjInstance*)VALUE_TO_OBJ(value))
+#define VALUE_TO_OBJLIST(value) ((ObjList*)VALUE_TO_OBJ(value))
+#define VALUE_TO_OBJMAP(value) ((ObjMap*)VALUE_TO_OBJ(value))
+
 #define VALUE_TO_OBJCLOSURE(value) ((ObjClosure*)VALUE_TO_OBJ(value))
+#define VALUE_TO_THREAD(value) ((ObjThread*)VALUE_TO_OBJ(value))
+#define VALUE_TO_OBJMODUEL(value) ((ObjModule*)VALUE_TO_OBJ(value))
 #define VALUE_TO_CLASS(value) ((Class*)VALUE_TO_OBJ(value))
 
 #define VALUE_IS_UNDEFINED(value) ((value).type == VT_UNDEFINED)
@@ -72,7 +80,7 @@ struct class {
     struct class *superClass; // 父类
     uint32_t fieldNum;        // 本类的字段数,包括基类的字段数
     MethodBuffer methods;     // 本类的方法
-    ObjString *name;          //类名
+    ObjString *name;          // 类名
 };  //对象类
 
 typedef union {
@@ -83,4 +91,5 @@ typedef union {
 
 #define CAPACITY_GROW_FACTOR 4
 #define MIN_CAPACITY 64
+bool valueIsEqual(Value a, Value b);
 #endif
