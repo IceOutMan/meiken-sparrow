@@ -19,7 +19,7 @@ static void runFile(const char *path) {
 
     VM *vm = newVM();
     const char *sourceCode = readFile(path);
-    executModule(vm, OBJ_TO_VALUE(newObjString(vm, path, strlen(path))), sourceCode);
+    executeModule(vm, OBJ_TO_VALUE(newObjString(vm, path, strlen(path))), sourceCode);
 
 }
 

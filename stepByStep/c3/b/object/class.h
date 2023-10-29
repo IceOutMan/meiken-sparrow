@@ -72,7 +72,7 @@ struct class {
     struct class *superClass; // 父类
     uint32_t fieldNum;        // 本类的字段数,包括基类的字段数
     MethodBuffer methods;     // 本类的方法
-    ObjString *name;          //类名
+    ObjString *name;          // 类名
 };  //对象类
 
 typedef union {

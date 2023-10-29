@@ -1,7 +1,6 @@
-#include "meta_obj.h"
 #include "class.h"
 #include "obj_fn.h"
-#include "../vm/vm.h"
+#include "header_obj.h"
 
 //创建一个空函数
 ObjFn* newObjFn(VM* vm, ObjModule* objModule, uint32_t slotNum) {
