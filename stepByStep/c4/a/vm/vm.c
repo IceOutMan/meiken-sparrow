@@ -1,8 +1,6 @@
 #include "vm.h"
-#include <stdlib.h>
-#include "../include/utils.h"
-#include "../object/obj_map.h"
 #include "core.h"
+#include <stdlib.h>
 
 //初始化虚拟机
 void initVM(VM* vm) {
@@ -21,5 +19,6 @@ VM* newVM() {
     }
     initVM(vm);
     buildCore(vm);
+
     return vm;
 }

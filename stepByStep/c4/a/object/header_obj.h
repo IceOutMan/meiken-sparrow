@@ -1,6 +1,7 @@
 #ifndef _OBJECT_HEADER_H
 #define _OBJECT_HEADER_H
 
+// 这里不要乱引入乱起八遭的东西
 #include "../include/utils.h"
 
 typedef enum {
@@ -19,10 +20,10 @@ typedef enum {
 
 typedef struct objHeader {
    ObjType type;
-   bool isDark;	   //对象是否可达
-   Class* class;   //对象所属的类
-   struct objHeader* next;   //用于链接所有已分配对象
-} ObjHeader;	  //对象头,用于记录元信息和垃圾回收
+   bool isDark;	   // 对象是否可达
+   Class* class;   // 对象所属的类
+   struct objHeader* next;   // 用于链接所有已分配对象
+} ObjHeader;	  // 对象头,用于记录元信息和垃圾回收
 
 typedef enum {
    VT_UNDEFINED,
@@ -30,18 +31,18 @@ typedef enum {
    VT_FALSE,
    VT_TRUE,
    VT_NUM,
-   VT_OBJ   //值为对象,指向对象头
-} ValueType;     //value类型
+   VT_OBJ   // 值为对象,指向对象头
+} ValueType;     // value类型
 
 typedef struct {
    ValueType type;
-   union {
-      double num;
-      ObjHeader* objHeader;
-   };
-}Value;   //通用的值结构
+    union {
+        double num;
+        ObjHeader* objHeader;
+    };
+} Value;   // 通用的值结构
 
-DECLARE_BUFFER_TYPE(Value)
+DECLARE_BUFFER_TYPE(Value);
 
 void initObjHeader(VM* vm, ObjHeader* objHeader, ObjType objType, Class* class);
 
