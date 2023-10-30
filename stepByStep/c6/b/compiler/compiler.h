@@ -36,7 +36,7 @@ typedef struct {
 
 typedef enum {
     SIGN_CONSTRUCT, // 构造函数
-    SING_METHOD,    // 普通方法
+    SIGN_METHOD,    // 普通方法
     SIGN_GETTER,    // getter 方法
     SIGN_SETTER,    // setter 方法
     SIGN_SUBSCRIPT, // getter 形式的下标
