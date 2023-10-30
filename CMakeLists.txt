@@ -30,6 +30,14 @@ add_executable(cli_main_c4_c ${c_files})
 file(GLOB_RECURSE c_files "stepByStep/c6/a/*.c")
 add_executable(cli_main_c6_a ${c_files})
 
+file(GLOB_RECURSE c_files "stepByStep/c6/b/*.c")
+add_executable(cli_main_c6_b ${c_files})
+
+file(GLOB_RECURSE c_files "stepByStep/c6/c/*.c")
+add_executable(cli_main_c6_c ${c_files})
+
+
+
 
 # 查看内容
 message("Found the following C files:")
