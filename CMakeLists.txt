@@ -36,6 +36,9 @@ add_executable(cli_main_c6_b ${c_files})
 file(GLOB_RECURSE c_files "stepByStep/c6/c/*.c")
 add_executable(cli_main_c6_c ${c_files})
 
+file(GLOB_RECURSE c_files "stepByStep/c6/d/*.c")
+add_executable(cli_main_c6_d ${c_files})
+
 
 
 
